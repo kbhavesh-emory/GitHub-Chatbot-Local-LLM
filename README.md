@@ -1,4 +1,4 @@
-# 🤖 GitHub-Chatbot-LLM
+# GitHub-Chatbot-LLM
 
 A **local RAG-based chatbot** for exploring GitHub repositories with **Ollama LLMs** (LLaMA 3, Mistral, etc.), **FAISS** embeddings, and a clean **React frontend** + **FastAPI backend**.
 
