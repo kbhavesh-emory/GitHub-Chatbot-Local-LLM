@@ -1,6 +1,6 @@
 #!/bin/bash
 # active.sh - Enhanced environment setup
-echo "🚀 Setting up GitHub Chatbot environment..."
+echo "Setting up GitHub Chatbot environment..."
 
 # Activate virtual environment
 source backend/.venv/bin/activate
