@@ -49,7 +49,7 @@ GitHub-Chatbot-LLM/
 
 ---
 
-## ⚙️ Setup Guide
+## Setup Guide
 
 ### 1️⃣ Clone Required Repositories
 ```bash
@@ -110,7 +110,7 @@ nohup python backend/ingest/store_embeddings.py backend/data/ --out backend/vect
 nohup python backend/ingest/store_embeddings.py backend/data backend/data/otherfiles --out backend/vectorstore --model BAAI/bge-large-en-v1.5 --device cuda --chunk-size 1200 --overlap 200 --batch-size 128 --chunks-per-batch 16000 --workers 8 --lang en --rembed > embeddings.log 2>&1 &
 ```
 
-📌 Output is saved to:
+Output is saved to:
 ```
 backend/vectorstore/
 ```
@@ -168,10 +168,10 @@ curl -s http://localhost:8000/chat -H 'Content-Type: application/json' -d '{"que
 
 ---
 
-## ✅ Done!
+## Done!
 Your chatbot should now be running with both **backend** and **frontend** accessible.
 
 ---
 
-## 📜 License
+## License
 Gutman-Lab, Department of Pathology & Laboratory Medicine, Emory University
