@@ -5,11 +5,11 @@ A **local RAG-based chatbot** for exploring GitHub repositories with **Ollama LL
 ---
 
 ## ✨ Features
-- 🔍 Retrieval-Augmented Generation (RAG) over cloned repositories  
-- ⚡ GPU-accelerated embeddings with Hugging Face BGE models  
-- 🖥️ FastAPI backend + React (Vite) frontend  
-- 💾 Persistent FAISS vectorstore for efficient queries  
-- 🛠️ Easy setup with virtual environment & Ollama models  
+- 🔍 Retrieval-Augmented Generation (RAG) over cloned repositories 
+- ⚡ GPU-accelerated embeddings with Hugging Face BGE models 
+- 🖥️ FastAPI backend + React (Vite) frontend 
+- 💾 Persistent FAISS vectorstore for efficient queries 
+- 🛠️ Easy setup with virtual environment & Ollama models 
 
 ---
 
@@ -27,24 +27,24 @@ A **local RAG-based chatbot** for exploring GitHub repositories with **Ollama LL
 ```
 GitHub-Chatbot-LLM/
 ├── backend/
-│   ├── api.py                # FastAPI server
-│   ├── chat/
-│   │   ├── rag_chat.py       # core RAG logic
-│   │   ├── history_utils.py
-│   │   └── logging_config.py
-│   ├── ingest/
-│   │   └── store_embeddings.py  # embedding pipeline
-│   ├── clone_dsa_repos.sh    # repository cloning
-│   ├── vectorstore/          # FAISS indices
-│   └── data/                 # cloned repositories
+│ ├── api.py # FastAPI server
+│ ├── chat/
+│ │ ├── rag_chat.py # core RAG logic
+│ │ ├── history_utils.py
+│ │ └── logging_config.py
+│ ├── ingest/
+│ │ └── store_embeddings.py # embedding pipeline
+│ ├── clone_dsa_repos.sh # repository cloning
+│ ├── vectorstore/ # FAISS indices
+│ └── data/ # cloned repositories
 ├── frontend/
-│   ├── src/
-│   │   ├── App.jsx           # main React app
-│   │   ├── main.jsx
-│   │   └── App.css
-│   ├── index.html
-│   └── vite.config.js
-└── active.sh                 # environment setup
+│ ├── src/
+│ │ ├── App.jsx # main React app
+│ │ ├── main.jsx
+│ │ └── App.css
+│ ├── index.html
+│ └── vite.config.js
+└── active.sh # environment setup
 ```
 
 ---
@@ -92,22 +92,22 @@ pip install -r backend/requirements.txt
 
 **Base model:**
 ```bash
-python backend/ingest/store_embeddings.py backend/data/   --out backend/vectorstore   --model BAAI/bge-base-en-v1.5   --device auto   --batch-size 32
+python backend/ingest/store_embeddings.py backend/data/ --out backend/vectorstore --model BAAI/bge-base-en-v1.5 --device auto --batch-size 32
 ```
 
 **Large model:**
 ```bash
-python backend/ingest/store_embeddings.py backend/data/   --out backend/vectorstore   --model BAAI/bge-large-en-v1.5   --device auto   --chunk-size 1200 --overlap 200   --batch-size 64 --chunks-per-batch 8000
+python backend/ingest/store_embeddings.py backend/data/ --out backend/vectorstore --model BAAI/bge-large-en-v1.5 --device auto --chunk-size 1200 --overlap 200 --batch-size 64 --chunks-per-batch 8000
 ```
 
 **Background run:**
 ```bash
-nohup python backend/ingest/store_embeddings.py backend/data/   --out backend/vectorstore   --model BAAI/bge-large-en-v1.5   --device auto   --chunk-size 1200 --overlap 200   --batch-size 64 --chunks-per-batch 8000 > embeddings.log 2>&1 &
+nohup python backend/ingest/store_embeddings.py backend/data/ --out backend/vectorstore --model BAAI/bge-large-en-v1.5 --device auto --chunk-size 1200 --overlap 200 --batch-size 64 --chunks-per-batch 8000 > embeddings.log 2>&1 &
 ```
 
 **Re-embedding multiple folders:**
 ```bash
-nohup python backend/ingest/store_embeddings.py backend/data backend/data/otherfiles   --out backend/vectorstore   --model BAAI/bge-large-en-v1.5   --device cuda   --chunk-size 1200 --overlap 200   --batch-size 128 --chunks-per-batch 16000   --workers 8 --lang en --rembed > embeddings.log 2>&1 &
+nohup python backend/ingest/store_embeddings.py backend/data backend/data/otherfiles --out backend/vectorstore --model BAAI/bge-large-en-v1.5 --device cuda --chunk-size 1200 --overlap 200 --batch-size 128 --chunks-per-batch 16000 --workers 8 --lang en --rembed > embeddings.log 2>&1 &
 ```
 
 📌 Output is saved to:
@@ -163,7 +163,7 @@ http://<host>:5173
 
 ### 7️⃣ Quick API Test
 ```bash
-curl -s http://localhost:8000/chat   -H 'Content-Type: application/json'   -d '{"question":"How does HistomicsUI talk to HistomicsTK?", "model":"gpt-oss:20b"}' | jq
+curl -s http://localhost:8000/chat -H 'Content-Type: application/json' -d '{"question":"How does HistomicsUI talk to HistomicsTK?", "model":"llama3:latest"}' | jq
 ```
 
 ---
