@@ -1,0 +1,82 @@
+# Ignore EVERYTHING by default
+*
+
+# --- Keep these root files ---
+!.gitignore
+!README.md
+!README1.md
+!backend/ingest/store_embeddings copy.py
+
+# --- Keep backend skeleton ---
+
+# explicit files/dirs inside backend
+!backend/api.py
+!backend/chat/
+!backend/chat/rag_chat.py
+!backend/chat/history_utils.py
+!backend/chat/logging_config.py
+!backend/ingest/
+!backend/ingest/store_embeddings.py
+!gpu_quickcheck.sh
+
+# Do NOT track runtime artifacts (remain ignored)
+# (we didn't whitelist them above, so they stay ignored)
+# - backend/saved_chats.json (created at runtime)
+# - backend/vectorstore/ (FAISS index)
+# - any other files under backend that are not explicitly unignored
+
+# --- Keep frontend files you specified ---
+!frontend/
+!frontend/index.html
+!frontend/src/
+!frontend/src/App.jsx
+!frontend/src/main.jsx
+!frontend/src/App.css
+
+# Everything else under frontend stays ignored
+# (e.g., node_modules, dist, etc.) because we didn't whitelist them
+
+# --- Common local environment & editor stuff (still ignored by the catch-all) ---
+# (Listed here just for clarity; they remain ignored unless explicitly whitelisted)
+# Python venvs / caches
+.env
+.venv
+env/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.python-version
+.dist-info/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Logs
+*.log
+logs/
+
+# Node / build
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/.parcel-cache/
+*.lock
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data / local content (remain ignored)
+data/
+backend/data/
+compare_models/
