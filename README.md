@@ -4,16 +4,16 @@ A **local RAG-based chatbot** for exploring GitHub repositories with **Ollama LL
 
 ---
 
-## ✨ Features
-- 🔍 Retrieval-Augmented Generation (RAG) over cloned repositories 
-- ⚡ GPU-accelerated embeddings with Hugging Face BGE models 
-- 🖥️ FastAPI backend + React (Vite) frontend 
-- 💾 Persistent FAISS vectorstore for efficient queries 
-- 🛠️ Easy setup with virtual environment & Ollama models 
+## Features
+- Retrieval-Augmented Generation (RAG) over cloned repositories 
+- GPU-accelerated embeddings with Hugging Face BGE models 
+- FastAPI backend + React (Vite) frontend 
+- Persistent FAISS vectorstore for efficient queries 
+- Easy setup with virtual environment & Ollama models 
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green?logo=fastapi)
 ![React](https://img.shields.io/badge/React-18-61dafb?logo=react)
