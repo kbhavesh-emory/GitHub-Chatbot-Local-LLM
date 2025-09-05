@@ -6,11 +6,11 @@ echo "Setting up GitHub Chatbot environment..."
 source backend/.venv/bin/activate
 
 # Set project root
-cd /opt/bhavesh/GitHub-Chatbot-Local-LLM
+cd /path/GitHub-Chatbot-Local-LLM
 
 # Environment variables for optimized performance
-export VECTORSTORE_DIR=/opt/bhavesh/GitHub-Chatbot-Local-LLM/backend/vectorstore
-export REPO_DIR=/opt/bhavesh/GitHub-Chatbot-Local-LLM/backend/data
+export VECTORSTORE_DIR=/path/GitHub-Chatbot-Local-LLM/backend/vectorstore
+export REPO_DIR=/path/GitHub-Chatbot-Local-LLM/backend/data
 export LLM_MODEL=llama3:latest
 export EMBEDDING_MODEL=BAAI/bge-large-en-v1.5
 export OLLAMA_BASE_URL=http://localhost:11434
