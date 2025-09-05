@@ -65,7 +65,7 @@ ollama pull llama3:latest
 
 ### 3️⃣ Create & Activate Virtual Environment
 ```bash
-cd /nashome/bhavesh/GitHub-Chatbot-LLM
+cd path/GitHub-Chatbot-LLM
 python3.13 -m venv backend/.venv
 source backend/.venv/bin/activate
 pip install --upgrade pip
